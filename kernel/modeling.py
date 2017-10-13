@@ -12,7 +12,6 @@ df = pd.read_csv('../input/train.csv')
 #    x=X('LotFrontage', bin=True),
 #    y='count(*):Q',
 #)
-
 chart = Chart(df).mark_point().encode(
     x='LotArea',
     y='SalePrice',
@@ -21,6 +20,9 @@ html = chart.to_html()
 
 with open('chart.html', 'w') as f:
     f.write(html)
+
+df.fillna(0, inplace=True)
+ggplot(df, aes('LotFrontage')) + geom_histogram()
 
 # Data Cleaning
 #df.fillna(0, inplace=True)
