@@ -79,3 +79,8 @@ train_score = reg.score(X_train, y_train)
 
 test_score = reg.score(X_test, y_test)
 print "Training set Accuracy: {} Test set Accuracy: {} ".format(train_score, test_score)
+
+
+from sklearn.metrics import mean_squared_error
+predictions = reg.predict(X_test)
+print 'RMSE is: {}'.format(mean_squared_error(y_test, predictions))
