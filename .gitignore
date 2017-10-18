@@ -1,3 +1,4 @@
 *.html
 kernel/altair_test.py
 kernel/.ipynb_checkpoints/
+*.csv
